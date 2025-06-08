@@ -47,10 +47,10 @@ image = torch.randn((size, size, 3), device='cuda')
 def grayscale(image):
     weights = torch.tensor([0.2989, 0.5870, 0.1140], device=image.device)
     return (image * weights).sum(2)
-our_grayscale = ext.grayscale(image)
-naive_grayscale = grayscale(image)
+cuda_grayscale = ext.grayscale(image)
+torch_grayscale = grayscale(image)
 tols = {'rtol' : 1e-4, 'atol' : 1e-4}
-if torch.allclose(our_grayscale, naive_grayscale, **tols):
+if torch.allclose(cuda_grayscale, torch_grayscale, **tols):
     print("WOOOHOO IT'S WORKING")
 else:
     print("IT ISN'T WORKING :(")
