@@ -1,3 +1,6 @@
+import os
+os.environ['TORCH_CUDA_ARCH_LIST'] = "6.1"
+
 import torch
 from torch.utils.cpp_extension import load_inline
 
