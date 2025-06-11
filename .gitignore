@@ -1,2 +1,8 @@
 build/
 *nsys-rep
+
+*.[!.]*
+
+# Except these (optional)
+!README.md
+!Makefile

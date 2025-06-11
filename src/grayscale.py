@@ -1,5 +1,6 @@
 import os
-os.environ['TORCH_CUDA_ARCH_LIST'] = "6.1"
+# Set to my Compute Capability by default
+os.environ['TORCH_CUDA_ARCH_LIST'] = os.environ.get("TORCH_CUDA_ARCH_LIST", "6.1")
 
 import torch
 from torch.utils.cpp_extension import load_inline
