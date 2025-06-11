@@ -1,8 +1,5 @@
 build/
 *nsys-rep
 
-*.[!.]*
-
-# Except these (optional)
-!README.md
-!Makefile
+# I'll ignore them by hand till I find a better alternative
+csrc/device_query/device_query
