@@ -4,9 +4,8 @@ from pathlib import Path
 
 yaml_config = yaml.safe_load(open(Path(__file__).parent.parent/'config.yaml'))
 
-
-# Some of the variables in the config should be environment variables
+# Load the env variables
 os.environ.update(yaml_config.pop('env'))
 
-# The rest are local variables
+# Load the local variables
 vars().update(yaml_config)
