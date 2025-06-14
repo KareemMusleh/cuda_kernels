@@ -1,5 +1,6 @@
 build/
 *nsys-rep
+__pycache__
 
-# I'll ignore them by hand till I find a better alternative
+# I'll ignore the binaries by hand till I find a better alternative
 csrc/device_query/device_query

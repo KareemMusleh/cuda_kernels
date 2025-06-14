@@ -1,0 +1,6 @@
+# This is the config for each individual python file in src/
+env:
+  TORCH_CUDA_ARCH_LIST: "6.1"
+# This is the directory in which we build the C++/CUDA files. It could be None
+build_directory: null
+# build_directory: "./build"

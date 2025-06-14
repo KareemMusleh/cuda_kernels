@@ -1,7 +1,4 @@
-import os
-# Set to my Compute Capability by default
-os.environ['TORCH_CUDA_ARCH_LIST'] = os.environ.get("TORCH_CUDA_ARCH_LIST", "6.1")
-
+import config
 import torch
 from torch.utils.cpp_extension import load_inline
 
@@ -57,7 +54,7 @@ ext = load_inline(
     functions=['matmul'],
     with_cuda=True,
     extra_cuda_cflags=["-O2"],
-    build_directory='./build',
+    build_directory=config.build_directory,
     # extra_cuda_cflags=['--expt-relaxed-constexpr']
 )
 size = 128
